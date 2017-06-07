@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Quotes</title>
+
+  <script src="lib/jquery-3.2.1.min.js"></script>
+
+  <!-- include source files here... -->
+  <script src="src/Quote.js"></script>
+  <script src="src/QuoteCollection.js"></script>
+
+
+
+</head>
+
+<body>
+  <div id='quote'>
+
+  </div>
+</body>
+
+
+<script>
+  $(document).ready(function() {
+    showQuote();
+    showAbbreviation();
+  })
+
+  var showQuote = function() {
+    var quote = new Quote("I am a quote");
+    $('#quote').html("Quote: " + quote.quoteText);
+  }
+
+  var showAbbreviation = function() {
+    var quote = new Quote("I am a very long quote");
+    $('#quote').html("Quote: " + quote.abbreviate());
+  }
+</script>
+</html>

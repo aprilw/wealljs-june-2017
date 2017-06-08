@@ -18,7 +18,7 @@ describe("Quote", function() {
   /* 2. User story: As a user,
    * I want to be able to see a quote and its author
    *
-   * Expected result: "As the wise [author] once said, 'Here is a quote.'"
+   * Expected result: "As the wise Jane Doe once said, 'Here is a quote.'"
    * If author is blank or unknown, instead display "Someone once said, 'Here is a quote.'" */
   xdescribe("#toDisplay", function() {
     // Complete this test and remove the "x" before the it function
@@ -61,7 +61,7 @@ describe("Quote", function() {
   });
 
 
-  /* 5. Before moving on to the next test block, is there some refactoring
+  /* 5. Before moving on to the next test suite, is there some refactoring
    *  you could do at this point? Check for any repeated functionality
    *  used in randomWord and another function.
    *

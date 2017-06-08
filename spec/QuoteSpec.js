@@ -3,9 +3,6 @@ describe("Quote", function() {
     quote = new Quote('my quote');
   });
 
-
-  // if it ends in an exclamation point, shout it out
-
   describe("#shout", function() {
     it("shouts the quote", function() {
       expect(quote.asShout()).toEqual("MY QUOTE");
@@ -18,19 +15,31 @@ describe("Quote", function() {
     });
   });
 
+  describe("#wordCount", function() {
+    it("returns the word count when there's one word", function() {
+      var oneWordQuote = new Quote("hi");
+      expect(oneWordQuote.wordCount()).toEqual(1);
+    });
 
-
-  it("can return the word count", function() {
-    expect(quote.wordCount()).toEqual(2);
+    it("returns the word count", function() {
+      expect(quote.wordCount()).toEqual(2);
+    });
   });
 
   // Helpful link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#Getting_a_random_integer_between_two_values
   // How do you guarantee a certain random value?
   // Check out spyOn - link to doc
-  it("can return a random word", function() {
-    spyOn(Math, 'random').and.returnValue(0);
-    expect(quote.randomWord()).toEqual("my");
+  describe("#randomWord", function() {
+    it("returns a word in the quote", function() {
+      expect(quote.quoteText).toContain(quote.randomWord());
+    })
+
+    it("returns a random word in the quote", function() {
+      spyOn(Math, 'random').and.returnValue(0);
+      expect(quote.randomWord()).toEqual("my");
+    });
   });
+
 
   describe("#abbreviate", function() {
     beforeEach(function() {

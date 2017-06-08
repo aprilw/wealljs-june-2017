@@ -21,12 +21,12 @@ describe("Quote", function() {
    * Expected result: "As the wise Jane Doe once said, 'Here is a quote.'"
    * If author is blank or unknown, instead display "Someone once said, 'Here is a quote.'" */
   xdescribe("#toDisplay", function() {
-    // Complete this test and remove the "x" before the it function
+    // Complete this test and remove the "x" before describe above
     it("prints the author name and quote text in a sentence", function() {
 
     });
 
-    // Fill me out and remove the "x" before the it function
+    // Decide what else to test
     it("[fill me out]", function() {
 
     });

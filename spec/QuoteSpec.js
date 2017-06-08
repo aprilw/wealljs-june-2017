@@ -61,6 +61,7 @@ describe("Quote", function() {
     });
   });
 
+
   // User story: As a user,
   // I want to abbreviate quotes longer than 20 characters
   //
@@ -81,10 +82,13 @@ describe("Quote", function() {
 
   });
 
-  // changes all periods and exclamation points to question marks
-  // no punctuation at end --> add question mark
-  // period or exclamation throughout --> change to question mark
-
+  // As a user, I want to be able to see any quote written
+  // as a question.
+  //
+  // Expected result:
+  // * periods and exclamation points are changed to question marks
+  // * if there's no punctuation at the end --> add question mark
+  // * other periods or exclamation points throughout are changed to question mark
   describe("#withDoubt", function() {
     it("adds question mark if there's no punctuation", function() {
       expect(quote.withDoubt()).toEqual("Be excellent to each other?");

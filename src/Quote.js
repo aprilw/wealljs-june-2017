@@ -1,60 +1,54 @@
-function Quote(text) {
-  this.quoteText = text;
+function Quote(text, author="unknown") {
+  this.text = text;
+  this.author = author;
 }
 
-Quote.prototype.asShout = function() {
-  return this.quoteText.toUpperCase();
+
+Quote.prototype.shouted = function() {
+  return this.text.toUpperCase();
 };
 
-Quote.prototype.asSong = function() {
-  return "♫ " + this.quoteText + " ♫";
-};
+
+Quote.prototype.toDisplay = function() {
+  return "As the wise " + this.author + " once said, '" + this.text + "'";
+
+}
 
 // Assume words are separated by a space
 Quote.prototype.wordCount = function () {
-  var words = this.quoteText.split(/\s+/);
+  var words = this.text.split(/\s+/);
   return words.length;
 }
 
 Quote.prototype.randomWord = function() {
-  var words = this.quoteText.split(/\s+/);
+  var words = this.text.split(/\s+/);
   return words[Math.floor(Math.random() * words.length)];
 }
 
 Quote.prototype.words = function() {
-  return this.quoteText.split(/\s+/);
+  return this.text.split(/\s+/);
 }
 
-Quote.prototype.abbreviate = function() {
-  if(this.quoteText.length > 20) {
-    return this.quoteText.substring(0, 20) + "...";
+Quote.prototype.abbreviated = function() {
+  if(this.text.length > 20) {
+    return this.text.substring(0, 20) + "...";
   } else {
-    return this.quoteText;
+    return this.text;
   }
 }
 
-Quote.prototype.asQuestion = function() {
-  // if(this.quoteText[this.quoteText.length - 1] == "." ||
-  //    this.quoteText[this.quoteText.length - 1] == "!") {
-  //   return this.quoteText.substring(0, this.quoteText.length - 1) + "?";
+Quote.prototype.withDoubt = function() {
+  // if(this.text[this.text.length - 1] == "." ||
+  //    this.text[this.text.length - 1] == "!") {
+  //   return this.text.substring(0, this.text.length - 1) + "?";
   // }
-  // return this.quoteText += "?";
+  // return this.text += "?";
 
-  var updatedQuoteText = this.quoteText.replace(/!|\./g, "?");
-  if(updatedQuoteText[updatedQuoteText.length - 1] != "?") {
-    return updatedQuoteText += "?";
+  var updatedtext = this.text.replace(/!|\./g, "?");
+  if(updatedtext[updatedtext.length - 1] != "?") {
+    return updatedtext += "?";
   } else {
-    return updatedQuoteText;
+    return updatedtext;
   }
 };
 
-
-
-// Quote.prototype.random = function() {
-//   var quoteText = "";
-//   $.getJSON("https://random-quote-generator.herokuapp.com/api/quotes/random", function(data) {
-//     quoteText = data.quote;
-//   });
-//   // return quoteText;
-//   return Math.random();
-// }

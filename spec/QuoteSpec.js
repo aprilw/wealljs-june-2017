@@ -82,18 +82,4 @@ describe("Quote", function() {
     })
   });
 
-
-
-  // it("can be random", function () {
-  //   $.getJSON("quotes.json")
-  //   spyOn(Math, 'random').and.returnValue(0.1);
-  //   expect(quote.random()).toEqual(0.1);
-
-  //   // spyOn($, "getJSON").and.returnValue({success: function(c){c(data)}}
-
-
-  //   //   {quote: "Moral indignation is jealousy with a halo.", author: "H. G. Wells (1866-1946)"})
-
-  //   // expect(quote.random()).toBe("Moral indignation is jealousy with a halo.");
-  // });
 });

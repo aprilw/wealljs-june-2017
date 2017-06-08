@@ -50,9 +50,6 @@ Quote.prototype.asQuestion = function() {
 
 
 
-
-
-
 // Quote.prototype.random = function() {
 //   var quoteText = "";
 //   $.getJSON("https://random-quote-generator.herokuapp.com/api/quotes/random", function(data) {

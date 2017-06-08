@@ -15,7 +15,10 @@ describe("Quote", function() {
     });
   });
 
-
+ // User story: As a user,
+  // I want to be able to see a quote and its author
+  //
+  // Expected result: "As the wise [author] once said, 'Here is a quote.'"
   describe("#toDisplay", function() {
     it("states the author name and quote text", function() {
       expect(quote.toDisplay()).toContain(quote.author);
